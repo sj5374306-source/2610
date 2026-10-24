@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #f2f8e9;
+    color: #263522;
+    font-family: Arial, "Malgun Gothic", sans-serif;
+}
+
+.game {
+    width: min(100%, 440px);
+    padding: 32px;
+    border: 3px solid #d5e5c3;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgb(48 76 34 / 12%);
+    text-align: center;
+}
+
+.game__header h1 {
+    margin: 0;
+    color: #477a35;
+    font-size: 2rem;
+}
+
+.game__header p {
+    margin: 10px 0 24px;
+    color: #71806a;
+}
+
+.game__status {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.status-card {
+    display: grid;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #f2f8e9;
+}
+
+.status-card__label {
+    color: #71806a;
+    font-size: 0.875rem;
+}
+
+.status-card__value {
+    color: #477a35;
+    font-size: 1.5rem;
+}
+
+.game__board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px;
+    border-radius: 20px;
+    background: #e8f2dc;
+}
+
+.hole {
+    position: relative;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 50%;
+    background: #79543b;
+    box-shadow: inset 0 8px 0 rgb(48 30 18 / 18%), 0 4px 0 #62432f;
+    cursor: pointer;
+}
+
+.hole--active::before {
+    content: "🐹";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    animation: mole-pop 160ms ease-out;
+}
+
+@keyframes mole-pop {
+    from {
+        transform: translateY(12px) scale(0.7);
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hole:focus-visible,
+.start-button:focus-visible {
+    outline: 3px solid #edaa43;
+    outline-offset: 3px;
+}
+
+.start-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 12px;
+    background: #6fa94f;
+    color: #fff;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background: #5c913f;
+}
+
+@media (max-width: 420px) {
+    .game {
+        padding: 24px 18px;
+    }
+
+    .game__board {
+        gap: 9px;
+        padding: 12px;
+    }
+}

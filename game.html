@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두더지 잡기</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <header class="game__header">
+            <h1>두더지 잡기</h1>
+            <p>두더지가 나타나면 빠르게 눌러 보세요!</p>
+        </header>
+
+        <section class="game__status" aria-label="게임 상태">
+            <div class="status-card">
+                <span class="status-card__label">점수</span>
+                <strong class="status-card__value" id="score">0</strong>
+            </div>
+            <div class="status-card">
+                <span class="status-card__label">남은 시간</span>
+                <strong class="status-card__value"><span id="time">30</span>초</strong>
+            </div>
+        </section>
+
+        <section class="game__board" aria-label="두더지 게임판">
+            <button class="hole" type="button" aria-label="첫 번째 구멍" data-hole="첫 번째"></button>
+            <button class="hole" type="button" aria-label="두 번째 구멍" data-hole="두 번째"></button>
+            <button class="hole" type="button" aria-label="세 번째 구멍" data-hole="세 번째"></button>
+            <button class="hole" type="button" aria-label="네 번째 구멍" data-hole="네 번째"></button>
+            <button class="hole" type="button" aria-label="다섯 번째 구멍" data-hole="다섯 번째"></button>
+            <button class="hole" type="button" aria-label="여섯 번째 구멍" data-hole="여섯 번째"></button>
+            <button class="hole" type="button" aria-label="일곱 번째 구멍" data-hole="일곱 번째"></button>
+            <button class="hole" type="button" aria-label="여덟 번째 구멍" data-hole="여덟 번째"></button>
+            <button class="hole" type="button" aria-label="아홉 번째 구멍" data-hole="아홉 번째"></button>
+        </section>
+
+        <button class="start-button" type="button">게임 시작</button>
+    </main>
+</body>
+</html>
